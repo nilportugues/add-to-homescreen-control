@@ -26,7 +26,7 @@ import ATHS from 'add-to-homescreen-control'
   
 ATHS.enable()
 ````
-3. Show the Add to Home Screen banner whenever you want to with `prompt()` method. The banner will appear only if the [criteria](https://developers.google.com/web/fundamentals/app-install-banners#criteria) are met. You can handle unmet criteria in two ways:
+3. Show the Add to Home Screen banner whenever you want to with `prompt()` method. The banner will appear only if the [criteria](https://github.com/filrak/add-to-homescreen-control#add-to-home-screen-criteria-chrome) are met. You can handle unmet criteria in two ways:
 
 - make use of the fact that `prompt()` returns a Promise (recommended):
 ````js
@@ -38,7 +38,7 @@ ATHS.prompt()
 - or you can use `canPrompt` property to check if the `prompt()` method is available:
 
 
-[Here](https://github.com/filrak/add-to-homescreen-control/blob/master/index.html) you can find example usage of this library (with local import)
+
 # Useful information 
 
 ### Browser support
