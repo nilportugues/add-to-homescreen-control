@@ -4,16 +4,18 @@
   </head>
   <body>
     Test
-    <button id="aths">Add to home screen</button>
+    <button id="aths">Add to home Screen</button>
   <script>
     navigator.serviceWorker.register('./sw.js').then( registration => {
       console.log('Service Worker registered')
     })
   </script>
   <script type="module">
+  // normally you should import from 'add-to-homescreen-control'
   import ATHS from './src/index.js'
-  window.ATHS = ATHS
-  window.ATHS.enable()
+  // enable the library
+  ATHS.enable()
+  // show prompt on button click
   document.querySelector('#aths').addEventListener('click', function () {
     window.ATHS.prompt()
     .then(() => console.log('success'))
