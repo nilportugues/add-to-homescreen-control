@@ -8,7 +8,9 @@ This library allows you to  programatically show Add to Homescreen banner. this 
 
 - `enable(): void` - enables capturing of `beforeinstallprompt` event and all the librarys behavior. You need to invoke this function as fast as you can to use all the other parts of this library.
 
-- `prompt(): Promise` - shows the Add to Home Screen banner (if the criteria are met).
+- `prompt(): Promise` - shows the Add to Home Screen banner (if the criteria are met) and resolves when user decides either to install or decline on Add to Home Screen. The resolved Promise value is an object with two values:
+  - `outcome: string` - outcome of the homescreen installation. Contains `accepted` if the app was succesfully installed, otherwise contains `dismissed` string.
+  - `platform: string` - platform used for installation
 
 - `canPrompt(): boolean` - returns `true` if the ATHS criteria are met and `prompt()` method can be fired
 
@@ -29,19 +31,12 @@ ATHS.enable()
 - make use of the fact that `prompt()` returns a Promise (recommended):
 ````js
 ATHS.prompt()
-  .then(() => console.log('Prompt shown'))
+  .then(({ outcome }) => console.log('user interacted with ATHS banner with outcome of', outcome))
   .catch(err => console.log(err))
 ````
 
 - or you can use `canPrompt` property to check if the `prompt()` method is available:
 
-````js
-if ( ATHS.canPrompt ) {
-  ATHS.prompt()
-} else {
-  // handle scenario when ATHS criteria are not met
-}
-````  
 
 [Here](https://github.com/filrak/add-to-homescreen-control/blob/master/index.html) you can find example usage of this library (with local import)
 # Useful information 

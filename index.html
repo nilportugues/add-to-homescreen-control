@@ -17,9 +17,10 @@
   ATHS.enable()
   // show prompt on button click
   document.querySelector('#aths').addEventListener('click', function () {
-    window.ATHS.prompt()
-    .then(() => console.log('success'))
-    .catch(err => console.log(err))
+    ATHS.prompt()
+    .then(({outcome}) => 
+      console.log(outcome)
+    ).catch(err => console.log(err))
   })
   </script>
 </body>
