@@ -8,7 +8,7 @@ This library allows you to  programatically show Add to Homescreen banner. this 
 
 - `enable(): void` - enables capturing of `beforeinstallprompt` event and all the librarys behavior. You need to invoke this function as fast as you can to use all the other parts of this library.
 
-- `prompt(): Promise` - shows the Add to Home Screen banner (if the criteria are met). This banner can be shown to the user only once per route. Moreover if the user declines (not ignores the prompt) to install the app it cannot be shown for the next 3 months.
+- `prompt(): Promise` - shows the Add to Home Screen banner (if the criteria are met).
 
 - `canPrompt(): boolean` - returns `true` if the ATHS criteria are met and `prompt()` method can be fired
 
@@ -66,4 +66,8 @@ This criteria are different for other browsers.
 - [MS Edge](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps#requirements)
 - [Opera](https://dev.opera.com/articles/installable-web-apps/)
 
+### Good practices and gotchas
 
+- It's a good practice to show ATHS prompt in a context and as a response to user gesture (for example button click). Showing it right after it's available is an anti-pattern.
+- banner can be shown only once per navigation route.
+- Once user click `x` on a banner it can't be shown again for a significant amount of time (currently ~3 months)
