@@ -14,7 +14,7 @@ import ATHS from 'add-to-homescreen-control'
   
 ATHS.enable()
 ````
-3. Show the Add To Home Screen  banner whwnever you want. It will appear only if the [criteria](https://developers.google.com/web/fundamentals/app-install-banners#criteria) are met. You can handle unmet criteria in two ways:
+3. Show the Add To Home Screen banner whenever you want to with `prompt()` method. The banner will appear only if the [criteria](https://developers.google.com/web/fundamentals/app-install-banners#criteria) are met. You can handle unmet criteria in two ways:
 - you can use `canPrompt` property to check if the `prompt()` method is available:
 
 ````js
@@ -37,3 +37,16 @@ ATHSBtn.addEventListener('click', () => {
 ````
 
 # Useful information 
+
+### Add To Homescreen criteria (Chrome)
+- The web app is not already installed
+- The user has interacted with the domain for at least 30 seconds
+- Your `index.html` includes Web App Manifest with at least following properties`short_name`, `name`, `start_url`, `icons` (at least 192px and 512px), `display` (standalone, fullscreen, minimal-ui)
+- You have registered Service Worker with a fetch event handler (can't be a dummy one)
+
+This criteria are different for other browsers. 
+- [Firefox](https://developer.mozilla.org/en-US/Apps/Progressive/Add_to_home_screen#How_do_you_make_an_app_A2HS-ready)
+- [MS Edge](https://docs.microsoft.com/en-us/microsoft-edge/progressive-web-apps#requirements)
+- [Opera](https://dev.opera.com/articles/installable-web-apps/)
+
+
