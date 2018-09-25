@@ -1,6 +1,6 @@
 # Add To Home Screen banner control
 
-This library allows you to  programatically show Add to Homescreen banner. this feature is available from Chrome 68 but the library works on the older versions aswell.
+This library allows you to  programatically show Add to Homescreen banner. this feature is available from Chrome 68 but the library works on the older versions aswell. It's recomennded to read [useful information](https://github.com/filrak/add-to-homescreen-control/blob/master/README.md#useful-information) section before using this library to avoid common problems and gotchas.
 
 # How to use this library
 
