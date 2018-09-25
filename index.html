@@ -1,0 +1,22 @@
+<html>
+  <head>
+      <link rel="manifest" href="./test/manifest.json">
+  </head>
+  <body>
+    Test
+    <button id="aths">add to homes creen</button>
+  <script>
+    navigator.serviceWorker.register('./sw.js').then( registration => {
+      console.log('Service Worker registered')
+    })
+  </script>
+  <script type="module">
+  import ATHS from './src/index.js'
+
+  ATHS.enable()
+  document.querySelector('#aths').addEventListener('click', function () {
+    ATHS.prompt()
+  })
+  </script>
+</body>
+</html>

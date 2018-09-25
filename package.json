@@ -1,0 +1,22 @@
+{
+  "name": "add-to-homescreen-control",
+  "version": "0.0.2",
+  "description": "Library that allows you to control new Add to Home Screen prompt behavior",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "npm run build && webpack-dev-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Filip Rakowski @filrakowski",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "babel-loader": "^8.0.2",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-server": "^3.1.9"
+  },
+  "dependencies": {}
+}
