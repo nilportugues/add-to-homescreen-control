@@ -15,11 +15,9 @@
   window.ATHS = ATHS
   window.ATHS.enable()
   document.querySelector('#aths').addEventListener('click', function () {
-    if ( window.ATHS.canPrompt ) {
-      window.ATHS.prompt()
-    } else {
-      alert('prompt unavailable')
-    }
+    window.ATHS.prompt()
+    .then(() => console.log('success'))
+    .catch(err => console.log(err))
   })
   </script>
 </body>
