@@ -4,7 +4,7 @@
   </head>
   <body>
     Test
-    <button id="aths">add to homes creen</button>
+    <button id="aths">Add to home screen</button>
   <script>
     navigator.serviceWorker.register('./sw.js').then( registration => {
       console.log('Service Worker registered')
@@ -12,10 +12,14 @@
   </script>
   <script type="module">
   import ATHS from './src/index.js'
-
-  ATHS.enable()
+  window.ATHS = ATHS
+  window.ATHS.enable()
   document.querySelector('#aths').addEventListener('click', function () {
-    ATHS.prompt()
+    if ( window.ATHS.canPrompt ) {
+      window.ATHS.prompt()
+    } else {
+      alert('prompt unavailable')
+    }
   })
   </script>
 </body>
