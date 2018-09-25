@@ -1,6 +1,6 @@
 {
   "name": "add-to-homescreen-control",
-  "version": "0.2.0",
+  "version": "0.4.0",
   "description": "Library that allows you to control new Add to Home Screen prompt behavior",
   "main": "lib/add-to-homescreen-control.js",
   "scripts": {
