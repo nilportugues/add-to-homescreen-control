@@ -1,22 +1,42 @@
 {
   "name": "add-to-homescreen-control",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Library that allows you to control new Add to Home Screen prompt behavior",
-  "main": "dist/index.js",
+  "main": "lib/add-to-homescreen-control.js",
   "scripts": {
-    "build": "webpack",
-    "start": "npm run build && webpack-dev-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --env dev && webpack --env build ",
+    "dev": "webpack --progress --colors --watch --env dev",
+    "test": "mocha --require babel-register --colors ./test/*.spec.js",
+    "test:watch": "mocha --require babel-register --colors -w ./test/*.spec.js"
   },
-  "author": "Filip Rakowski @filrakowski",
+  "repository": {
+    "type": "git",
+    "url": "hhttps://github.com/filrak/add-to-homescreen-control"
+  },
+  "keywords": [
+    "pwa",
+    "add-to-homescreen",
+    "javascript"
+  ],
+  "author": "Filip Rakowski",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.1.0",
-    "@babel/preset-env": "^7.1.0",
-    "babel-loader": "^8.0.2",
-    "webpack": "^4.19.1",
-    "webpack-cli": "^3.1.1",
-    "webpack-dev-server": "^3.1.9"
-  },
-  "dependencies": {}
+    "@babel/cli": "^7.0.0-beta.51",
+    "@babel/core": "^7.0.0-beta.51",
+    "@babel/preset-env": "^7.0.0-beta.51",
+    "babel-loader": "^8.0.0-beta.4",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-env": "^7.0.0-beta.3",
+    "babel-register": "^7.0.0-beta.3",
+    "chai": "^4.1.2",
+    "eslint": "^5.0.1",
+    "eslint-loader": "^2.0.0",
+    "jsdom": "11.11.0",
+    "jsdom-global": "3.0.2",
+    "mocha": "^4.0.1",
+    "uglifyjs-webpack-plugin": "^1.2.7",
+    "webpack": "^4.12.2",
+    "webpack-cli": "^3.0.8",
+    "yargs": "^10.0.3"
+  }
 }
